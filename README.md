@@ -1,4 +1,12 @@
 # Sistema de Cadastro e Gestão de Estoque em Python
+### Integrantes:
+- Gustavo Civita Gonçalves - RM: 561932
+- Arthur Baptista dos Santos - RM: 565346
+- Luis Filipe Chaves Amorim - RM: 564706
+- Henry Andrade Browne - RM: 562089
+- Marcelo Roberto Maso Junior - RM: 562163
+
+
 ### Descrição
 
 Este projeto é um sistema de cadastro e gestão de estoque escrito em Python, desenvolvido para controle de produtos em pequenas empresas ou lojas.
