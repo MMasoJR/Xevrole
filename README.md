@@ -1,4 +1,5 @@
-# Sistema de Cadastro e Gestão de Estoque em Python
+# Sistema de Gestão de Estoque, Vendas e Relatórios em Python
+
 ### Integrantes:
 - Gustavo Civita Gonçalves - RM: 561932
 - Arthur Baptista dos Santos - RM: 565346
@@ -6,105 +7,81 @@
 - Henry Andrade Browne - RM: 562089
 - Marcelo Roberto Maso Junior - RM: 562163
 
-
 ### Descrição
 
-Este projeto é um sistema de cadastro e gestão de estoque escrito em Python, desenvolvido para controle de produtos em pequenas empresas ou lojas.
+Este projeto é um sistema de gestão de estoque, vendas e relatórios escrito em Python, desenvolvido para o controle completo de produtos em pequenas empresas ou lojas. O código foi modularizado para facilitar a manutenção e escalabilidade.
 
 O sistema permite:
 
-- Cadastrar produtos com informações completas (nome, código, categoria, quantidade, preço, descrição e fornecedor).
-- Gerenciar o estoque: adicionar, remover e atualizar quantidades.
-- Alertar automaticamente quando o estoque de um produto estiver baixo.
-- Listar todos os produtos de forma organizada.
+- Cadastrar produtos com informações completas (nome, código, categoria, quantidade, preço, etc.).
+- Gerenciar o estoque de forma inteligente: adicionar e remover quantidades.
+- Registrar vendas, com atualização automática do estoque.
+- Gerar relatórios de vendas, estoque atual e histórico de movimentações.
+- **Persistência de Dados**: Salvar automaticamente os produtos em um arquivo `estoque.json` e o histórico de ações em `movimentacoes.txt`, garantindo que nenhuma informação seja perdida ao fechar o sistema.
 
-Funcionalidades:
+### Funcionalidades:
 
-### Cadastro de Produtos
+#### Cadastro de Produtos
 - Nome do produto
 - Código único do produto
-- Categoria (ex.: eletrônicos, vestuário)
+- Categoria
 - Quantidade em estoque
 - Preço
 - Descrição
 - Fornecedor
-- Estoque mínimo para alertas
 
-### Gestão de Estoque
-- Adicionar estoque → aumentar a quantidade disponível.
-- Remover estoque → reduzir a quantidade (com alerta se ficar abaixo do mínimo).
-- Atualização manual → definir a quantidade exata de estoque.
-- Alerta de estoque baixo → aviso automático no terminal quando a quantidade estiver no limite mínimo.
+#### Gestão de Estoque
+- **Adicionar estoque**: Aumentar a quantidade disponível de um produto.
+- **Remover estoque**: Reduzir a quantidade, seja por venda ou ajuste manual.
+- **Alerta de estoque baixo**: Um aviso é exibido no terminal quando a quantidade de um produto atinge um nível crítico (Exemplo: 10 Unidades).
 
-### Listagem de Produtos
-- Lista todos os produtos cadastrados.
-- Mostra as informações de forma organizada usando o método especial __str__.
+#### Vendas
+- Registrar uma venda informando o código do produto e a quantidade.
+- Aplicar descontos percentuais no momento da venda.
+- O estoque do produto vendido é atualizado automaticamente.
+- Emissão de um recibo simples no terminal após cada venda.
+
+#### Relatórios
+- **Relatório de Vendas**: Lista todas as vendas registradas com data, produto, quantidade e valor total.
+- **Relatório de Estoque**: Exibe uma lista completa de todos os produtos e suas informações atuais.
+- **Histórico de Movimentações**: Mostra um log de todas as operações importantes (adições, remoções, vendas) com data e hora.
 
 ### Como usar
 
-1. Clone ou baixe o projeto.
+1. Clone ou baixe todos os arquivos do projeto para a mesma pasta.
 2. Execute o arquivo principal:
 
-``` python nome_do_arquivo.py ```
+```bash
+python main.py
+```
 
 3. Será exibido o menu interativo:
-
-- 1 - Cadastrar produto
-- 2 - Listar produtos
-- 3 - Adicionar ao estoque
-- 4 - Remover do estoque
-- 5 - Atualizar estoque
-- 6 - Sair
-
+```bash
+===== SISTEMA DE ESTOQUE - EDC =====
+1️⃣ Cadastrar produto
+2️⃣ Listar produtos
+3️⃣ Adicionar estoque
+4️⃣ Remover estoque
+5️⃣ Registrar venda
+6️⃣ Relatórios
+0️⃣ Sair
+```
 4. Digite a opção desejada e siga as instruções no terminal.
 
 ### Estrutura do Código
 
-#### 1. Classe Produto
+O projeto foi dividido em módulos para uma melhor organização:
 
-- Representa cada produto do sistema.
-- Contém atributos como nome, código, categoria, quantidade, preço, descrição, fornecedor e estoque mínimo.
-- Métodos: ```adicionar_estoque()```, ```remover_estoque()```, ```atualizar_estoque()```, ```verificar_estoque_baixo()``` e ```__str__()```.
-
-#### 2. Classe SistemaEstoque
-
-- Gerencia todos os produtos cadastrados.
-- Armazena os produtos em um dicionário (self.produtos) usando o código como chave.
-- Métodos: ```cadastrar_produto()```, ```listar_produtos()```, ```adicionar_estoque()```, ```remover_estoque()```, ```atualizar_estoque()```, ```buscar_produto()```.
-
-#### 3. Menu Interativo
-
-- Laço ```while``` que permite ao usuário interagir com o sistema pelo terminal.
-- Permite cadastrar, listar e gerenciar o estoque dos produtos.
+-   **`main.py`**: Ponto de entrada do programa. Contém o menu interativo e o loop principal que gerencia a interação com o usuário.
+-   **`produto.py`**: Define a classe `Produto`, que representa cada item do estoque com seus atributos e métodos básicos.
+-   **`estoque.py`**: Contém a classe `Estoque`, responsável por gerenciar o dicionário de produtos, incluindo as funções de salvar e carregar dados do arquivo `estoque.json`.
+-   **`vendas.py`**: Define a classe `Vendas`, que cuida da lógica de registrar uma venda, calcular o total e atualizar o estoque.
+-   **`relatorio.py`**: Contém a classe `Relatorios`, usada para gerar e exibir os diferentes relatórios disponíveis no sistema.
+-   **`utils.py`**: Módulo com funções auxiliares usadas em todo o projeto, como formatação de moeda e registro de movimentações no log.
+-   **`estoque.json`**: Arquivo gerado automaticamente para armazenar os dados dos produtos.
+-   **`movimentacoes.txt`**: Arquivo de log que registra todas as ações realizadas no sistema.
 
 ### Observações
 
-- O sistema não utiliza banco de dados, todos os dados ficam em memória enquanto o programa estiver rodando.
-- Caso o programa seja fechado, todos os produtos cadastrados serão perdidos.
-- Para melhorar, pode-se implementar salvamento em CSV ou JSON.
-
-### Exemplo de Uso
-```
-===== MENU ESTOQUE =====
-1 - Cadastrar produto
-2 - Listar produtos
-3 - Adicionar ao estoque
-4 - Remover do estoque
-5 - Atualizar estoque
-6 - Sair
-Escolha uma opção: 1
-```
-
-- Após cadastrar produtos, ao listar:
-
-```
-[P001] Notebook Dell - Categoria: Eletrônicos | Qtd: 10 | Preço: R$3500.00 | Fornecedor: Fornecedor A
-[P002] Camiseta Nike - Categoria: Vestuário | Qtd: 50 | Preço: R$120.00 | Fornecedor: Fornecedor B
-```
-
-- Ao remover estoque abaixo do mínimo:
-
-```
-❌ 6 unidades removidas do produto 'Notebook Dell'. Estoque atual: 4
-⚠️ Alerta: Estoque baixo para 'Notebook Dell'. Restam apenas 4 unidades.
-```
+- O sistema utiliza arquivos JSON e TXT para persistência de dados, garantindo que as informações de produtos e o histórico de movimentações não sejam perdidos.
+- A arquitetura modular permite que novas funcionalidades sejam adicionadas de forma mais simples e organizada.
