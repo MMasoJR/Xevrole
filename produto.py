@@ -19,7 +19,7 @@ class Produto:
             "preco": self.preco,
             "descricao": self.descricao,
             "fornecedor": self.fornecedor,
-            "estoque_minimo": self.estoque_minimo,  # Adicionado para salvar no JSON
+            "estoque_minimo": self.estoque_minimo,
         }
 
     def verificar_estoque_baixo(self):
@@ -33,7 +33,7 @@ class Produto:
     def remover_estoque(self, qtd):
         if qtd <= self.quantidade:
             self.quantidade -= qtd
-            self.verificar_estoque_baixo()  # Chama a verificação aqui
+            self.verificar_estoque_baixo()
         else:
             print("❌ Quantidade insuficiente em estoque.")
 
@@ -44,3 +44,4 @@ class Produto:
     def __str__(self):
         return (f"[{self.codigo}] {self.nome} - Categoria: {self.categoria} | "
                 f"Qtd: {self.quantidade} | Preço: R${self.preco:.2f} | Fornecedor: {self.fornecedor}")
+    
