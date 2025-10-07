@@ -19,7 +19,7 @@ class Produto:
             "preco": self.preco,
             "descricao": self.descricao,
             "fornecedor": self.fornecedor,
-            "estoque_minimo": self.estoque_minimo,  # Adicionado para salvar no JSON
+            "estoque_minimo": self.estoque_minimo,
         }
 
     def verificar_estoque_baixo(self):
