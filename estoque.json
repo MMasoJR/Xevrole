@@ -1,0 +1,20 @@
+{
+    "C001": {
+        "nome": "Picanha",
+        "codigo": "C001",
+        "categoria": "Carnes",
+        "quantidade": 52,
+        "preco": 70.0,
+        "descricao": "Carne de alta qualidade",
+        "fornecedor": "Açougue Pata Negra"
+    },
+    "F001": {
+        "nome": "Maça",
+        "codigo": "F001",
+        "categoria": "Frutas",
+        "quantidade": 81,
+        "preco": 3.0,
+        "descricao": "",
+        "fornecedor": "Horta Dona Maria"
+    }
+}
