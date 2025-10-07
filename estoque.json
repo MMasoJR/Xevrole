@@ -28,5 +28,15 @@
         "descricao": "",
         "fornecedor": "Oreo",
         "estoque_minimo": 30
+    },
+    "C002": {
+        "nome": "Alcatra",
+        "codigo": "C002",
+        "categoria": "Carnes",
+        "quantidade": 64,
+        "preco": 50.0,
+        "descricao": "",
+        "fornecedor": "Açougue Pata Negra",
+        "estoque_minimo": 30
     }
 }

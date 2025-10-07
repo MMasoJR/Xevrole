@@ -7,3 +7,5 @@
 [06/10/2025 23:16:02] Venda registrada: Picanha (3 un.) - Total: R$199,50
 [06/10/2025 23:16:30] Venda registrada: Maça (41 un.) - Total: R$123,00
 [06/10/2025 23:32:49] Remoção de 120 unidades no produto Bolacha Oreo
+[07/10/2025 08:17:44] Adição de 13 unidades no produto Alcatra
+[07/10/2025 08:19:40] Venda registrada: Alcatra (5 un.) - Total: R$250,00
