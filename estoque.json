@@ -3,7 +3,7 @@
         "nome": "Picanha",
         "codigo": "C001",
         "categoria": "Carnes",
-        "quantidade": 52,
+        "quantidade": 49,
         "preco": 70.0,
         "descricao": "Carne de alta qualidade",
         "fornecedor": "Açougue Pata Negra"
@@ -12,7 +12,7 @@
         "nome": "Maça",
         "codigo": "F001",
         "categoria": "Frutas",
-        "quantidade": 81,
+        "quantidade": 40,
         "preco": 3.0,
         "descricao": "",
         "fornecedor": "Horta Dona Maria"
