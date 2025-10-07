@@ -22,7 +22,7 @@ class Estoque:
                 for codigo, dados_produto in dados_carregados.items():
                     # Garante que o campo 'estoque_minimo' exista para compatibilidade com dados antigos
                     if 'estoque_minimo' not in dados_produto:
-                        dados_produto['estoque_minimo'] = 0 # Define um padrão se não existir
+                        dados_produto['estoque_minimo'] = 20 # Define um padrão se não existir
                     produto = Produto(**dados_produto)
                     self.produtos[codigo] = produto
             print("📦 Dados do estoque carregados com sucesso!")
