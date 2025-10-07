@@ -33,7 +33,7 @@ class Produto:
     def remover_estoque(self, qtd):
         if qtd <= self.quantidade:
             self.quantidade -= qtd
-            self.verificar_estoque_baixo()  # Chama a verificação aqui
+            self.verificar_estoque_baixo()
         else:
             print("❌ Quantidade insuficiente em estoque.")
 
