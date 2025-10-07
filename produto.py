@@ -44,3 +44,4 @@ class Produto:
     def __str__(self):
         return (f"[{self.codigo}] {self.nome} - Categoria: {self.categoria} | "
                 f"Qtd: {self.quantidade} | Preço: R${self.preco:.2f} | Fornecedor: {self.fornecedor}")
+    
