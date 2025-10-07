@@ -6,7 +6,8 @@
         "quantidade": 49,
         "preco": 70.0,
         "descricao": "Carne de alta qualidade",
-        "fornecedor": "Açougue Pata Negra"
+        "fornecedor": "Açougue Pata Negra",
+        "estoque_minimo": 0
     },
     "F001": {
         "nome": "Maça",
@@ -15,6 +16,17 @@
         "quantidade": 40,
         "preco": 3.0,
         "descricao": "",
-        "fornecedor": "Horta Dona Maria"
+        "fornecedor": "Horta Dona Maria",
+        "estoque_minimo": 0
+    },
+    "D001": {
+        "nome": "Bolacha Oreo",
+        "codigo": "D001",
+        "categoria": "Doces",
+        "quantidade": 23,
+        "preco": 11.0,
+        "descricao": "",
+        "fornecedor": "Oreo",
+        "estoque_minimo": 30
     }
 }
